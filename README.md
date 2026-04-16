@@ -5,7 +5,7 @@
 
 ![website-banner](ansi-tui-website.png)
 
-Showcase website for [`@3a2dev/ansi-tui`](https://www.npmjs.com/package/@3a2dev/ansi-tui), built with Astro and deployed as a static site on Vercel.
+Showcase website for [`@3a2dev/ansi-tui`](https://github.com/3A2DEV/ansi-tui), built with Astro and deployed as a static site on Vercel.
 
 This repository currently focuses on the website, not the terminal application itself. The site is designed to communicate the product clearly to Ansible engineers, platform teams, and enterprise operators with real product proof, terminal-native visuals, and minimal marketing noise.
 
