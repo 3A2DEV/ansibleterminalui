@@ -204,12 +204,6 @@ website/              Astro application
   package.json        Astro app scripts and dependencies
 ```
 
-## Content Sources
-
-Primary source of truth:
-
-- `showcase-website.md`
-
 Additional sources that should inform the site when present:
 
 - `README.md`
@@ -233,19 +227,3 @@ npm run check
 npm run build
 npm run preview
 ```
-
-## Known Gaps
-
-- `/docs` is not implemented yet.
-- `/contributing` is not implemented yet.
-- Feature subpages under `/features/*` do not exist yet.
-- Latest version badges and npm download counters depend on browser access to npm public APIs; static fallback copy remains if those requests fail.
-- `/changelog` depends on browser access to the GitHub Releases API for live data; bundled fallback notes remain if that request fails.
-- Copy and visual proof should be refined again as package docs and contributor docs expand.
-
-## Near-Term Priorities
-
-1. Add `/docs` and `/contributing` once source material exists.
-2. Add more product-proof visuals beyond the current screenshot and recording assets.
-3. Re-evaluate whether `/features/*` subpages are needed or whether the single `/features` page remains the right depth.
-4. Continue tightening copy and section density as the main package documentation grows.
