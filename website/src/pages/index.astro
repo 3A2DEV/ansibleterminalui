@@ -15,6 +15,8 @@ import Base from '../layouts/Base.astro';
 
 const homeUrl = new URL('/', Astro.site).toString();
 const softwareId = `${homeUrl}#software`;
+const publisherId = `${homeUrl}#publisher`;
+const brandId = `${homeUrl}#brand`;
 
 function faqAnswerText(answer: string, template?: string) {
   return (template ?? answer)
@@ -45,6 +47,8 @@ const structuredData = [
     description:
       'Open source Ansible terminal UI for playbooks, vault, lint, inventory, galaxy, builder, test, and more with guided forms, live output, sessions, and offline installation.',
     url: homeUrl,
+    brand: { '@id': brandId },
+    publisher: { '@id': publisherId },
     downloadUrl: 'https://www.npmjs.com/package/@3a2dev/ansi-tui',
     installUrl: new URL('/install/', Astro.site).toString(),
     codeRepository: 'https://github.com/3A2DEV/ansi-tui',
