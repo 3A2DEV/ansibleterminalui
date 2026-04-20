@@ -118,7 +118,7 @@ The site follows a mostly static Astro architecture with a small number of targe
 
 ### Shared structure
 
-- `website/src/layouts/Base.astro` provides the shared shell, metadata, canonical URLs, Open Graph tags, Twitter tags, robots directives, JSON-LD, favicon, and browser-side npm metadata hydrator.
+- `website/src/layouts/Base.astro` provides the shared shell, metadata, canonical URLs, Open Graph tags, Twitter tags, robots directives, JSON-LD, favicon links, web manifest links, and browser-side npm metadata hydrator.
 - `website/src/components/Header.astro` and `website/src/components/Footer.astro` provide shared navigation and footer structure.
 - `website/src/styles/global.css` contains the global visual system and reusable terminal framing utilities such as terminal window chrome, badges, and code block presentation.
 - `website/public/robots.txt` provides crawler allow rules and sitemap discovery.
@@ -161,8 +161,8 @@ This keeps content structured, reusable, and easier to maintain as the product e
 
 - Canonical URLs are derived from `Astro.site`.
 - Open Graph and Twitter metadata default to `website/public/social.png`.
-- The favicon is `website/public/3a2dev.svg`.
-- Shared JSON-LD for `Organization`, `WebSite`, and `WebPage` lives in `Base.astro`.
+- Search/browser icon coverage includes `favicon.ico`, `favicon-48x48.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, and `site.webmanifest`.
+- Shared JSON-LD for the `3A2DEV` publisher, `ansi-tui` brand, `WebSite`, and `WebPage` lives in `Base.astro`.
 - The home page adds `SoftwareApplication`, `SoftwareSourceCode`, and `FAQPage` structured data.
 - The install page adds `HowTo` structured data.
 - The features and changelog pages add breadcrumb and collection-page structured data.
@@ -180,11 +180,17 @@ last-rec.gif          Source demo recording asset
 ansi-tui-website.png  README preview image
 website/              Astro application
   public/             Static assets served directly
-    3a2dev.svg        Current favicon source
+    favicon.svg       ansi-tui favicon source
+    3a2dev.svg        Legacy brand asset
     banner.png        Legacy hero / preview base image
     social.png        Default Open Graph / social preview image
     demo.gif          Primary demo media used in the hero
-    favicon.svg       Legacy favicon asset
+    favicon.ico       Multi-size favicon for search/browser surfaces
+    favicon-48x48.png PNG favicon for crawler/browser compatibility
+    apple-touch-icon.png iOS home screen icon
+    icon-192.png      Web app icon
+    icon-512.png      High-resolution web app icon
+    site.webmanifest  Web app metadata and icon manifest
     robots.txt        Crawl allowlist and sitemap discovery entrypoint
     theme-cycle.gif   Theme switcher demo asset
   src/

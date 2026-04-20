@@ -22,29 +22,47 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
-const organizationId = new URL('/#organization', Astro.site).toString();
+const publisherId = new URL('/#publisher', Astro.site).toString();
+const brandId = new URL('/#brand', Astro.site).toString();
 const websiteId = new URL('/#website', Astro.site).toString();
 const webpageId = `${canonicalURL.toString()}#webpage`;
+const icon512URL = new URL('/icon-512.png', Astro.site).toString();
 const structuredDataItems = Array.isArray(structuredData) ? structuredData : [structuredData];
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': organizationId,
+      '@id': publisherId,
       name: '3A2DEV',
       url: 'https://github.com/3A2DEV',
-      logo: new URL('/3a2dev.svg', Astro.site).toString(),
-      sameAs: ['https://github.com/3A2DEV', 'https://www.npmjs.com/package/@3a2dev/ansi-tui'],
+      sameAs: ['https://github.com/3A2DEV'],
+    },
+    {
+      '@type': 'Brand',
+      '@id': brandId,
+      name: 'ansi-tui',
+      alternateName: 'Ansible Terminal User Interface',
+      url: new URL('/', Astro.site).toString(),
+      slogan: 'Ansible Terminal UI for playbooks, vault, lint, inventory and more',
+      logo: {
+        '@type': 'ImageObject',
+        url: icon512URL,
+        width: 512,
+        height: 512,
+      },
+      sameAs: ['https://www.npmjs.com/package/@3a2dev/ansi-tui', 'https://github.com/3A2DEV/ansi-tui'],
     },
     {
       '@type': 'WebSite',
       '@id': websiteId,
       url: new URL('/', Astro.site).toString(),
       name: 'ansi-tui',
+      alternateName: 'Ansible Terminal User Interface',
       description,
       inLanguage: 'en-US',
-      publisher: { '@id': organizationId },
+      publisher: { '@id': publisherId },
+      about: { '@id': brandId },
     },
     {
       '@type': 'WebPage',
@@ -54,7 +72,7 @@ const jsonLd = JSON.stringify({
       description,
       inLanguage: 'en-US',
       isPartOf: { '@id': websiteId },
-      about: { name: 'ansi-tui' },
+      about: { '@id': brandId },
       primaryImageOfPage: {
         '@type': 'ImageObject',
         url: ogImageURL.toString(),
@@ -74,6 +92,8 @@ const jsonLd = JSON.stringify({
     <meta name="robots" content={robots} />
     <meta name="author" content="3A2DEV" />
     <meta name="application-name" content="ansi-tui" />
+    <meta name="apple-mobile-web-app-title" content="ansi-tui" />
+    <meta name="msapplication-TileColor" content="#09090b" />
 
     <meta name="google-site-verification" content="ORZk9i53sqwFGhIby0NVa3CAfnV8h9bnNRtNtl52Vv8" />
 
@@ -98,7 +118,11 @@ const jsonLd = JSON.stringify({
     <meta name="twitter:image" content={ogImageURL} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
 
-    <link rel="icon" type="image/svg+xml" href="/3a2dev.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <script is:inline type="application/ld+json" set:html={jsonLd}></script>
