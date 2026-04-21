@@ -4,7 +4,7 @@
 
 ![ansi-tui website](https://img.shields.io/badge/website-blue?logo=ansible&label=ansi-tui)
 ![vercel app](https://img.shields.io/badge/app-blue?logo=vercel&label=vercel)
-![Website status](https://img.shields.io/website?url=https%3A%2F%2Fansibleterminalui.vercel.app%2F&up_message=up&up_color=green&down_message=down&down_color=red&logo=vercel&label=website%20status)
+![Website status](https://img.shields.io/website?url=https%3A%2F%2Fansi-tui.com%2F&up_message=up&up_color=green&down_message=down&down_color=red&logo=vercel&label=website%20status)
 
 </div>
 
