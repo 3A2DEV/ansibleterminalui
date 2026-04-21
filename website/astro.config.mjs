@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://ansibleterminalui.vercel.app',
+  site: 'https://ansi-tui.com',
   integrations: [tailwind({ applyBaseStyles: false }), react(), sitemap()],
 });
